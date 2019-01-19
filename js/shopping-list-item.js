@@ -17,9 +17,9 @@ class ShoppingListItem {
 
   render(idx) {
     if (this.isDone === true) {
-      return `<li class="completed_${this.isDone}"><input type="checkbox" onchange="changeCheckedStatus(${idx}, this)" checked/><span>${this.name}</span> <span>${this.description}</span></li>`;
+      return `<li class="completed_${this.isDone}"><div clas="listItem"><input class="check" type="checkbox" onchange="changeCheckedStatus(${idx}, this)" checked/><span class="itemName completed">${this.name}</span><span class="description completed">${this.description}</span></div> <button class="close" onclick="removeItemButtonClicked(${idx})">x</button></li>`;
     } else {
-      return `<li class="completed_${this.isDone}"><input type="checkbox" onchange="changeCheckedStatus(${idx}, this)"><span>${this.name}</span> <span>${this.description}</span></li>`;
+      return `<li class="completed_${this.isDone}"><div class="listItem"><input class="check" type="checkbox" onchange="changeCheckedStatus(${idx}, this)"><span class="itemName">${this.name}:</span><span class="description">${this.description}</span></div> <button class="close" onclick="removeItemButtonClicked(${idx})">x</button></li>`;
     }
   }
 

@@ -11,9 +11,16 @@ const shoppingList = new ShoppingList();
  FUNCTIONS
  ******************/
 
+const clearInputFields = () => {
+  nameField.value = "";
+  descriptionField.value = "";
+};
+
 const addToShoppingList = () => {
-  const newItem = new ShoppingListItem(nameField.value, descriptionField.value);
-  shoppingList.addItem(newItem);
+  if (nameField.value.length > 0) {
+    const newItem = new ShoppingListItem(nameField.value, descriptionField.value);
+    shoppingList.addItem(newItem);
+  };
 };
 
 function changeCheckedStatus(idx, checkbox) {
@@ -25,6 +32,11 @@ function changeCheckedStatus(idx, checkbox) {
   content.innerHTML = shoppingList.render();
 };
 
+const removeItemButtonClicked = (idx) => {
+  shoppingList.items.splice(idx, 1);
+  content.innerHTML = shoppingList.render();
+};
+
 /*******************
 EVENT LISTENERS
 ******************/
@@ -32,6 +44,7 @@ EVENT LISTENERS
 addButton.addEventListener('click', (event) => {
   event.preventDefault();
   addToShoppingList();
+  clearInputFields();
   let renderedList = shoppingList.render();
   content.innerHTML = renderedList;
 });

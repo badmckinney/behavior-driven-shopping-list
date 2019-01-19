@@ -24,7 +24,7 @@ class ShoppingList {
     }
   }
   render() {
-    let unorderedList = '<ul>';
+    let unorderedList = '<ul id="list">';
     for (let i = 0; i < this.items.length; i++) {
       let rendered = this.items[i].render(i);
       unorderedList += rendered;
