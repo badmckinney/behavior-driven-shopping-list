@@ -1,5 +1,7 @@
 'use strict';
 
+// const listItem = require('./shopping-list-item.js');
+
 class ShoppingList {
   constructor() {
     this.items = [];

@@ -224,7 +224,7 @@ describe('ShoppingList', () => {
       let str = groceries.render();
 
       expect(str).to.equal(
-        `<ul><li class="completed_false"><span>Campbells</span> <span>Tomato Soup</span></li><li class="completed_false"><span>Lays</span> <span>Salt & Vinegar</span></li><li class="completed_false"><span>Fresh Greens</span> <span>Caesar</span></li></ul>`
+        `<ul id="list"><li class="completed_false"><div class="listItem"><input class="check" type="checkbox" onchange="changeCheckedStatus(0, this)"><span class="itemName">Campbells:</span><span class="description">Tomato Soup</span></div> <button class="close" onclick="removeItemButtonClicked(0)">x</button></li><li class="completed_false"><div class="listItem"><input class="check" type="checkbox" onchange="changeCheckedStatus(1, this)"><span class="itemName">Lays:</span><span class="description">Salt & Vinegar</span></div> <button class="close" onclick="removeItemButtonClicked(1)">x</button></li><li class="completed_false"><div class="listItem"><input class="check" type="checkbox" onchange="changeCheckedStatus(2, this)"><span class="itemName">Fresh Greens:</span><span class="description">Caesar</span></div> <button class="close" onclick="removeItemButtonClicked(2)">x</button></li></ul>`
       );
     });
   });
