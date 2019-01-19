@@ -55,6 +55,7 @@ body {
   font-weight: 800;
   font-size: 1em;
   letter-spacing: 0.1em;
+  background: rgb(245, 245, 245);
   color: #636e72;
   border: 1px solid #b2bec3;
   margin: 3px;
@@ -69,6 +70,7 @@ body {
   font-weight: 800;
   font-size: 1em;
   letter-spacing: 0.1em;
+  background: rgb(245, 245, 245);
   color: #636e72;
   border: 1px solid #b2bec3;
   margin: 3px;
@@ -132,22 +134,23 @@ body {
 }
   
 .check {
-  margin: 10px 10px 0px 15px;
+  margin: 10px 10px 0px 30px;
   height: 20px;
   width: 20px;
-
   background-color: #fff;
 }
 
 .check:checked {
-  margin: 1px 10px 0px 15px;
+  margin: 1px 10px 0px 30px;
   height: 20px;
   width: 20px;
   background-color: #fff;
-  padding-left: 1.5em;
  }
       
 .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #EF5350;
   color: #fff;
   outline: none;
@@ -171,6 +174,7 @@ body {
   margin: 0px;
   width: 100%;
   border-bottom: 1px solid #b2bec3;
+  background: rgb(245, 245, 245);
 }
 
 .completed {
