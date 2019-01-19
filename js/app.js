@@ -4,7 +4,6 @@ const content = document.querySelector('#content');
 const addButton = document.querySelector('#addShoppingListItemButton');
 const nameField = document.querySelector('#name');
 const descriptionField = document.querySelector('#description');
-const checkboxes = document.querySelectorAll('.checkbox');
 const shoppingList = new ShoppingList();
 
 /*******************
