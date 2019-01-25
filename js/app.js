@@ -44,6 +44,5 @@ addButton.addEventListener('click', (event) => {
   event.preventDefault();
   addToShoppingList();
   clearInputFields();
-  let renderedList = shoppingList.render();
-  content.innerHTML = renderedList;
+  content.innerHTML = shoppingList.render();
 });

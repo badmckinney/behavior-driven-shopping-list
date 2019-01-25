@@ -61,6 +61,11 @@ body {
   margin: 3px;
 }
 
+#name::placeholder,
+#description::placeholder {
+  color: #b2bec3;
+}
+
 #description {
   height: 60%;
   width: 50%;

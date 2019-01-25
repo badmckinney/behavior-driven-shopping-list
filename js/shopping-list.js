@@ -15,7 +15,7 @@ class ShoppingList {
   }
 
   removeItem(item) {
-    if (item === undefined) {
+    if (!item) {
       this.items.pop();
     } else if (
       !(item instanceof ShoppingListItem && this.items.includes(item))

@@ -22,11 +22,12 @@ describe('ShoppingListItem', () => {
     let soup = new ShoppingListItem('name');
 
     it('should have a name property', () => {
+      expect(soup).to.have.own.property(name);
       expect(soup.name).to.equal('name');
     });
 
     it('should be a string', () => {
-      expect(typeof soup.name === 'string').to.be.true;
+      expect(soup.name).to.be.a('string');
     });
   });
 
@@ -34,11 +35,12 @@ describe('ShoppingListItem', () => {
     let soup = new ShoppingListItem("Cambell's", 'Tomato Soup');
 
     it('should have a description property', () => {
+      expect(soup).to.have.own.property(description);
       expect(soup.description).to.equal('Tomato Soup');
     });
 
     it('should be a string', () => {
-      expect(typeof soup.description === 'string').to.be.true;
+      expect(soup.description).to.be.a('string');
     });
   });
 
@@ -54,14 +56,17 @@ describe('ShoppingListItem', () => {
     });
 
     it('should be a boolean', () => {
-      expect(typeof soup.isDone === 'boolean').to.be.true;
+      expect(soup.isDone).to.be.a('boolean');
     });
   });
 
   it('should have a constructor method that accepts 2 arguments, name & description', () => {
     let soup = new ShoppingListItem("Campbell's", 'Tomato Soup');
-    expect(soup.name === "Campbell's" && soup.description === 'Tomato Soup').to
-      .be.true;
+    expect(soup.name === "Campbell's" && soup.description === 'Tomato Soup').to.be.true;
+
+    it('should throw an error if instantiated without either name or description', () => {
+      expect(new ShoppingListItem().to.throw('Please provide a name and description'));
+    });
   });
 
   describe('item check method', () => {
@@ -75,7 +80,7 @@ describe('ShoppingListItem', () => {
       expect(soup.check).to.be.a('function');
     });
 
-    it('should set the isDone property to true when calling the insances check method', () => {
+    it('should set the isDone property to true when calling the instances check method', () => {
       soup.check();
       expect(soup.isDone).to.be.true;
     });
@@ -104,7 +109,7 @@ describe('ShoppingListItem', () => {
     let rendered = soup.render();
 
     it('should return an html formatted string', () => {
-      expect(typeof rendered === 'string').to.be.true;
+      expect(rendered).to.be.a('string');
     });
 
     it('should be a function', () => {
