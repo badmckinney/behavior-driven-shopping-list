@@ -117,9 +117,7 @@ describe('ShoppingListItem', () => {
     });
 
     it('string content should be wrapped in <li> tags', () => {
-      let beginningTag = rendered.slice(0, 3);
-      let endTag = rendered.slice(rendered.length - 3);
-      expect(`${beginningTag}${endTag}`).to.equal('<lili>');
+      expect(rendered).to.equal('<li class="completed_false"><div class="listItem"><input class="check" type="checkbox" onchange="changeCheckedStatus(0, this)"><span class="itemName">Campbell\'s:</span><span class="description">Tomato Soup</span></div> <button class="close" onclick="removeItemButtonClicked(0)">x</button></li>');
     });
   });
 });
